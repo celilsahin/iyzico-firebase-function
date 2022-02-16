@@ -1,2 +1,1 @@
-# iyzico-firebase-function
-iyzico on Firebase
+# iyzico on Firebase
