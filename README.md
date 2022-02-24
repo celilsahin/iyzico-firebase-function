@@ -1,17 +1,5 @@
 ## iyzico ile Firebase Cloud Function
 
-İyzico api, firebase ve cloud function kullanarak uygulamalarınıza ödeme sistemi entegre edebilirsiniz.
-
-1. Örnek datayı httpsCallable ile "iyzicoStart" fonksiyonuna gönderiyoruz.
-2. iyzicoStart fonksiyonu datayı iyzico api üzerinden "checkoutFormInitialize" göndermektedir.
-3. checkoutFormInitialize bize sonuç olarak result değerini gönderiyor.
-4. httpsCallable then ile gelen result değerini alıp script kodunu ekrana bastırıyoruz.
-5. kullanıcı kart bilgilerini girip ödemeyi tamamlandıktan sonra callbackUrl yönlendiriliyor.
-6. iyzicoCallback fonksiyonu ile gelen token,locale,conversationId ile işlemin sonucunu öğreniyoruz.
-7. gelen sonucu firestore yazıyoruz (burası size kalmış istediğinizi yapabilirsiniz).
-8. firestore yazdıktan sonra redirect ile tekrar sitemize yönlendiriyoruz.
-9. redirect url içinde firestore eklenen datanın idside bulunmaktadır. Bu id ile datayı sorgulayıp kullanıcıya detaylı bilgi verebilirsiniz.
-
 ```
 return firebase.functions().httpsCallable("iyzicoStart")(data)
 .then((success) => {
